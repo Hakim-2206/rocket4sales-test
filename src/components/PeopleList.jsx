@@ -63,7 +63,7 @@ const PeopleList = () => {
     return (
         <div className="py-28">
             {/*Si la liste de personnes n'est pas vide, on affiche*/}
-            {filteredPeoples.length ? (
+            {filteredPeoples && filteredPeoples.length ? (
                 <>
                     <AnimatePresence mode="wait">
                         <motion.div

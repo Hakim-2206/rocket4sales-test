@@ -73,8 +73,8 @@ const peopleSlice = createSlice({
             })
             // quand fetchPeople réussit
             .addCase(fetchPeople.fulfilled, (state, action) => {
-                state.peoples = action.payload.data
-                state.filteredPeoples = action.payload.data
+                state.peoples = action.payload
+                state.filteredPeoples = action.payload
                 state.isLoading = false
             })
             // quand fetchPeople échoue
@@ -89,7 +89,7 @@ const peopleSlice = createSlice({
             })
             // fetchOne réussit
             .addCase(fetchOneProfile.fulfilled, (state, action) => {
-                state.experiences = action.payload.data
+                state.experiences = action.payload
                 state.isLoading = false
             })
             // fetchOne échoue
