@@ -2,7 +2,7 @@
 
 # Rocket4Sales - Test - Hakim 
 
- Application web conçue pour consommer une API de gestion de profils. Elle permet de visualiser les membres d'une équipe commerciale, de filtrer les résultats, et de consulter les détails de chaque profil, y compris leurs expériences professionnelles.
+ Application web conçue pour consommer une API de gestion de profils. Elle permet de visualiser des membres, de filtrer les résultats, et de consulter les détails de chaque profil, y compris leurs expériences professionnelles.
  Viuel disponible ici  : https://rocket4sales-frontend.onrender.com/
 ## Fonctionnalités
 
