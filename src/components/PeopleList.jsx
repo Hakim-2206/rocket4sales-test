@@ -21,7 +21,9 @@ const PeopleList = () => {
     // Calcul des elements à afficher
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredPeoples.slice(indexOfFirstItem, indexOfLastItem)
+    const currentItems = filteredPeoples && filteredPeoples.length > 0
+        ? filteredPeoples.slice(indexOfFirstItem, indexOfLastItem)
+        : [];
 
     // fonction pour changer de pagination
     const paginate = (pageNumber) => {

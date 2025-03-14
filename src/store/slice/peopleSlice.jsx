@@ -48,7 +48,7 @@ const initialState = {
     filteredPeoples: [],
     experiences: [],
     isLoading: false,
-    error: ""
+    error: null
 }
 
 // creation du slice redux
