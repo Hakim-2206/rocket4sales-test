@@ -10,11 +10,18 @@ export default defineConfig({
         tailwindcss(),
     ],
     build: {
-        outDir: 'dist', // Dossier de sortie pour les fichiers de production
+        outDir: 'dist',
+        sourcemap: true,
+        minify: 'terser', // Minifie le code JavaScript
+        terserOptions: {
+            compress: true, // Active la compression
+        },
+        assetsInlineLimit: 4096, // Inline les petits assets
+        // Dossier de sortie pour les fichiers de production
     },
     server: {
         proxy: {
-            '/api': 'https://rocket4sales-backend.onrender.com', // Redirige les requêtes /api vers ton backend
+            '/api': process.env.VITE_API_URL || 'https://rocket4sales-backend.onrender.com', // Redirige les requêtes /api vers ton backend
         }
     }
 
