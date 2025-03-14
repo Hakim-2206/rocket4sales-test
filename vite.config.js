@@ -4,10 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: "/rocket4sales-test/",
+    base: "/",
     plugins: [
         react(),
         tailwindcss(),
     ],
+    build: {
+        outDir: 'dist', // Dossier de sortie pour les fichiers de production
+    },
 
 })
