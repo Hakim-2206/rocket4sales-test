@@ -22,6 +22,10 @@
 - **Animations** : Framer Motion
 - **Icônes** : React Icons
 
+- ## Problématique et solutions :
+
+- Au départ, on gérait tout dans le front (avec service.api et slice), mais ça ne marchait pas en prod à cause de problèmes de sécurité (CORS, gestion des erreurs). J'ai donc ajouté un backend avec Node.js et Express servant de pont entre l'API et notre front, ce qui nous permet de mieux gérer les erreurs et de sécuriser les requêtes. maintenant tout fonctionne bien.
+
 ## Installation
 
 1. Cloner le dépôt :
