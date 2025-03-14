@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router"; // gestion du routage
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="/rocket4sales-test">
             <Provider store={store}>
                 <App/>
             </Provider>

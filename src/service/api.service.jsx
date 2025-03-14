@@ -1,19 +1,30 @@
 import axios from "axios";
 
 // Création d'une instance d'axios avec une base URL pour éviter les pb avec CORS.
-// base URL = "/api", pour que toutes les requêtes à l'API se fassent via ce point de départ.
-// voir le fichier `vite.config`
+
 const api = axios.create({
-    baseURL: "/api" // utilisation du proxy configuré dans vite.config
+    baseURL: 'https://rocket4sales-backend.onrender.com/api'
 })
 
 // useApi gère les appels API
 const useApi = () => {
     const fetchProfiles = async () => {
-        return await api.get("/people?nb_results=350") // appel api, fonction get de axios
+        try {
+            const response = await api.get('/profiles'); // Appel au backend local
+            return response.data; // Retourne directement les données
+        } catch (error) {
+            console.error("Error fetching profiles:", error);
+            throw error;
+        }
     }
     const fetchOneProfile = async (userId) => {
-        return await api.get(`/experiences?person_id=${userId}`)
+        try {
+            const response = await api.get(`/profile/${userId}`); // Appel au backend local
+            return response.data; // Retourne directement les données
+        } catch (error) {
+            console.error("Error fetching one profile:", error);
+            throw error;
+        }
     }
 
     // retour des methodes fetch pour les utiliser ailleurs
