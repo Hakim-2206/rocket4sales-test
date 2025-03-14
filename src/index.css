@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+@tailwind utilities;
+
+
+@theme {
+    --color-lightWhite: #F4F2EE;
+    --breakpoint-sm: 350px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1560px;
+}
+
+
+body {
+    @apply bg-lightWhite
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+html {
+    font-family: Nunito, sans-serif;
+    scrollbar-width: none;
+}
