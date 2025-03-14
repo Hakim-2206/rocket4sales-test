@@ -18,10 +18,15 @@ const PeopleList = () => {
     const [currentPage, setCurrentPage] = useState(1); // hook useState pour gérer la page actuelle
     const itemsPerPage = 15;
 
+    useEffect(() => {
+        console.log('filteredPeoples:', filteredPeoples);
+    }, [filteredPeoples]);
+
+
     // Calcul des elements à afficher
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredPeoples && filteredPeoples.length > 0
+    const currentItems = Array.isArray(filteredPeoples) && filteredPeoples.length > 0
         ? filteredPeoples.slice(indexOfFirstItem, indexOfLastItem)
         : [];
 
@@ -74,11 +79,11 @@ const PeopleList = () => {
                             {/*Parcourir currentItems et afficher un component PeopleItem avec un props
                                 "people" pour chaque personne et un key correspondant à leur id*/}
 
-                            {
-                                currentItems.map((people) => (
+                            {currentItems.map((people) =>
+                                people && people.data_member_id ? (
                                     <PeopleItem key={people.data_member_id} people={people}/>
-                                ))
-                            }
+                                ) : null
+                            )}
                         </motion.div>
                     </AnimatePresence>
 
