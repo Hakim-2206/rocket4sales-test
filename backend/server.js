@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware pour autoriser les requêtes CORS
 app.use(cors({
-    origin: 'https://rocket4sales-frontend.onrender.com', // Autorise uniquement votre frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
-    allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
+    origin: '*', // Pour tester, remplacez par '*' (moins sécurisé mais permet de vérifier que le problème vient du CORS)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Route pour récupérer les profils

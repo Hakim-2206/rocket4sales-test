@@ -16,7 +16,7 @@ export const fetchPeople = createAsyncThunk(
     "peoples/fetchPeople", // action et reducer
     async (_, thunkAPI) => { // thunkAPI contient le dispatch (getState aussi)
         const res = await api.fetchProfiles(); // appel api
-        console.log("Réponse de l'API :", res.data)
+        console.log("Réponse de l'API :", res)
         return res.data // retourne la data
     }
 )

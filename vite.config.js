@@ -12,5 +12,10 @@ export default defineConfig({
     build: {
         outDir: 'dist', // Dossier de sortie pour les fichiers de production
     },
+    server: {
+        proxy: {
+            '/api': 'https://rocket4sales-backend.onrender.com', // Redirige les requêtes /api vers ton backend
+        }
+    }
 
 })
